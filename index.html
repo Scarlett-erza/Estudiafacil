@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudiaFácil - Plataforma Completa</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+
+    <div id="notificationContainer"></div>
+
+    <div id="loginScreen">
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <h1>🎓 EstudiaFácil</h1>
+            <p class="text-center" style="color: var(--gris); margin-bottom: 40px;">Una plataforma para estudio rápido</p>
+            <div class="card" style="max-width: 500px; margin: 0 auto;">
+                <div class="text-center mb-30">
+                    <div style="font-size: 60px; margin-bottom: 20px;">👩‍🎓</div>
+                    <h2>¡Bienvenido!</h2>
+                    <p style="color: var(--gris); margin: 15px 0;">Domina cualquier tema</p>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="usernameInput" placeholder="Tu nombre de usuario" autofocus>
+                    <p style="font-size: 14px; color: var(--gris); margin-top: 5px;">Ej: juan_estudiante, maria_bio, etc.</p>
+                </div>
+                <button class="btn-primary" onclick="login()" style="width: 100%; padding: 18px; font-size: 18px;">🚀 Comenzar Aventura</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainScreen" class="hidden">
+        <h1>📁 Mis carpetas</h1>
+        <p class="text-center">Aquí irá todo tu contenido</p>
+        <div class="form-group">
+            <input type="text" id="folderInput" placeholder="NOMBRE DE LA CARPETA">
+            <button onclick="crearCarpeta()" style="position:relative; z-index:9999;">crear carpeta</button>
+            <div id="folderList"></div>
+        </div>
+        <div id ="carpetasContainer"></div>
+    </div>
+
+    <div id ="carpetaScreen" class="hidden">
+        <button onclick="volver()">VOLVER</button>
+        <h2 id="tituloCarpeta"></h2>
+        <input type="text" id="temaCarpeta" placeholder="tema de la materia" style="width:100%; padding:10px; margin:10px 0;">
+        <textarea id="infoCarpeta" placeholder="Escribe la informacion a estudiar..." style= "width:100%; height:200px; padding:10px;"></textarea> 
+        <button onclick="guardarInfo()">GUARDAR</button>
+        <button onclick="verProgreso()">Quiero ver mi progreso</button>
+        <button onclick="nivelEstudiante()">Chequear mi nivel</button>
+        <button onclick="generarExamen()">Hacer Examen</button>
+        <button onclick="generarFlashcards()">Prueba Flashcards</button>
+    </div>
+
+    <div id="estudioScreen"  class="hidden">
+        <button onclick="volverACarpeta()">volver a carpetas</button>
+        <div id="zonaEstudio"></div>
+    </div>
+
+<script def src="script.js"></script>
+</body>
+</html>
